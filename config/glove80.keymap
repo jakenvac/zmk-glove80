@@ -144,7 +144,7 @@
             &none      &none      &none      &none      &none                                                                                              &none      &none      &none      &none      &none      
             &none      &none      &none      &none      &none      &none                                                                        &none      &none      &none      &none      &none      &none      
             &kp PIPE   &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT                                                                    &kp CARET  &kp AMPS   &kp STAR   &kp LPAR   &kp RPAR   &kp NUBS      
-            &kp MINUS  &kp FSLH   &kp LT     &kp LBKT   &kp LPAR   &kp LBRC                                                                     &kp RBRC   &kp RPAR   &kp RBKT   &kp GT     &kp PLUS   &kp EQUAL      
+            &kp FSLH   &kp MINUS  &kp LT     &kp LBKT   &kp LPAR   &kp LBRC                                                                     &kp RBRC   &kp RPAR   &kp RBKT   &kp GT     &kp PLUS   &kp EQUAL      
             &none      &none      &none      &none      &none      &none      &none      &none      &none      &none      &none      &none      &none      &none      &none      &none      &none      &none      
             &none      &none      &none      &none      &none                 &none      &none      &none      &none      &none      &none                 &none      &none      &none      &none      &none      
             >;
@@ -159,6 +159,26 @@
             &sys_reset        &none               &none           &none           &none           &none           &bt_2     &bt_3     &none            &none     &none     &none       &none      &none      &none      &none      &none      &sys_reset
             &none             &none               &none           &none           &none                           &bt_0     &bt_1     &out OUT_USB     &none     &none     &none                  &none      &none      &none      &none      &none
             >;
+        };
+
+        extra1 { 
+            status = "reserved";
+        };
+            
+        extra2 { 
+            status = "reserved";
+        };
+            
+        extra3 { 
+            status = "reserved";
+        };
+            
+        extra4 { 
+            status = "reserved";
+        };
+            
+        extra5 { 
+            status = "reserved";
         };
     };
 };
