@@ -24,6 +24,7 @@
 #define NUMSYM 1
 #define NAV 2
 #define MAGIC 3
+#define GAMING 4
 
 // Hyper keys
 #define LHYP LS(LC(LA(LGUI)))
@@ -100,6 +101,24 @@
                 = <&out OUT_BLE>,
                   <&bt BT_SEL 3>;
         };
+
+        e_gaming: enter_gaming {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&rgb_ug RGB_ON>,
+                  <&tog GAMING>;
+        
+        };
+        
+        l_gaming: l_gaming {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&rgb_ug RGB_OFF>,
+                  <&tog GAMING>;
+        
+        }
     };
 
     keymap {
@@ -134,7 +153,7 @@
             &none      &none      &none      &none      &none      &none                                                                        &none      &none      &none      &none      &none      &none      
             &kp PIPE   &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT                                                                    &kp CARET  &kp AMPS   &kp STAR   &kp LPAR   &kp RPAR   &kp NUBS      
             &kp ESC    &kp N1     &kp N2     &kp N3     &kp N4     &kp N5                                                                       &kp N6     &kp N7     &kp N8     &kp N9     &kp N0     &kp BSLH      
-            &kp FSLH   &kp MINUS  &kp LPAR   &kp RPAR   &kp LBRC   &kp RBRC   &none      &none      &none      &none      &none      &none      &kp LBKT   &kp RBKT   &kp LT     &kp GT     &kp PLUS   &kp EQUAL
+            &kp FSLH   &kp MINUS  &kp LPAR   &kp RPAR   &kp LBRC   &kp RBRC   &none      &none      &none      &none      &none      &none      &kp LBKT   &kp RBKT   &kp LT     &kp GT     &kp PLUS   &kp EQUA
             &none      &none      &none      &none      &none                 &none      &kp DEL    &none      &none      &kp RET    &none                 &none      &none      &none      &none      &none      
             >;
         };
@@ -157,10 +176,21 @@
             &none             &rgb_ug RGB_SPI     &rgb_ug RGB_SAI &rgb_ug RGB_HUI &rgb_ug RGB_BRI &rgb_ug RGB_TOG                                                                      &none      &none      &none      &none      &none      &none
             &bootloader       &rgb_ug RGB_SPD     &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_BRD &rgb_ug RGB_EFF                                                                      &none      &none      &none      &none      &none      &bootloader
             &sys_reset        &none               &none           &none           &none           &none           &bt_2     &bt_3     &none            &none     &none     &none       &none      &none      &none      &none      &none      &sys_reset
-            &none             &none               &none           &none           &none                           &bt_0     &bt_1     &out OUT_USB     &none     &none     &none                  &none      &none      &none      &none      &studio_unlock
+            &none             &e_gaming           &none           &none           &none                           &bt_0     &bt_1     &out OUT_USB     &none     &none     &none                  &none      &none      &none      &none      &studio_unlock
             >;
         };
 
+        gaming_layer {
+            bindings = <
+            &kp F1          &kp F2        &kp F3       &kp F4      &kp F5                                                                                             &none      &none      &none      &none      &none      
+            &kp ESC         &kp N1        &kp N2       &kp N3      &kp N4        &kp N5                                                                    &none      &none      &none      &none      &none      &none      
+            &kp TAB         &kp Q         &kp W        &kp E       &kp R         &kp T                                                                     &none      &none      &none      &none      &none      &none      
+            &kp LCTRL       &kp A         &kp S        &kp D       &kp F         &kp G                                                                     &none      &none      &none      &none      &none      &none      
+            &kp GRAVE       &kp Z         &kp X        &kp C       &kp V         &kp B   &kp LSHFT   &kp LCTRL   &kp LGUI   &none    &none      &none      &none      &none      &none      &none      &none      &none      
+            &mo MAGIC       &none         &none        &none       &none                 &kp BSPC    &kp SPACE   &kp DEL    &none    &none      &none                 &none      &none      &none      &none      &none      
+            >;
+        };
+            
         extra1 { 
             status = "reserved";
         };
